@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# Book Search Library App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A Simple Book Search Library App using the OpenLibrary External API data.
 
-## Available Scripts
+## Project Screen Shot(s)
+<img src="images/home.png" width="600" alt="Book Search Page"/>
 
-In the project directory, you can run:
+## Technical questions
+1.	How long did you spend on the coding assignment? 
+    8hrs
+a.	What would you add to your solution if you had more time?
+    - Would show limited data on initial page load and would add an load more button to fetch more books details
+b.	If you didn't spend much time on the coding test, then use this as an opportunity to explain what you would add.
+    - Would add a Popup Modal, to show more details of the books when user clicks the book. 
+2.	What was the most useful feature that was added to the latest version of your chosen language? 
+    React Hooks is a really good addition of react, which helps use lot of methods in functional components as well
+Please include a snippet of code that shows how you've used it.
+Example code of fetching the data from Open Library api call.
+```bash
+const res = await axios.get(`https://openlibrary.org/search.json?q=${bookName}`);
+        this.setState({
+          loading: false,
+          searchData: res.data.docs
+        });
+```
+3.	How would you track down a performance issue in production? Have you ever had to do this?
+    - Check CPU and Memory Usage.
+    - We can check the production performance using external services like Lighthouse.
+    - i have not done much, but i have experience checking the website using Lighhouse.
+4.	How would you improve the API that you just used?
+    I have made a api request in a map function, since i had to loop through the data fetched from first api to request cover image of the book using second api. I would try to find a beter way to optimize this code, or find out if there is any other way to fetch all the data from one endpoint. 
+5.	Please describe yourself using correctly formatted JSON.
+    {
+        name: "Keerthikumar",
+        age: 29,
+        Occupation: "Front End Developer",
+        address : {
+            Unit: 26,
+            line1: "Drew Street",
+            city: "Guelph",
+            Province: "ON"
+        }
+    }
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Project setup
+Clone down this repository. You will need node and npm installed globally on your machine.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Installation:
+```bash
+npm install
+```
 
-### `yarn test`
+To Start Server:
+```bash
+npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+To Run Test Suite:
+```bash
+npm test
+```
+To Visit App:
+```bash
+localhost:3000
+```
