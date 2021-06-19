@@ -23,12 +23,11 @@ class App extends Component {
     if(this.textInput.current.value) {
       this.setState({loading: true});
     }
-    console.log('handleSubmit hittttttttttt', this.textInput.current.value);
     let bookName = (this.textInput.current.value).split(' ').join('+');
     try {
       if(bookName) {
         const res = await axios.get(`https://openlibrary.org/search.json?q=${bookName}`);
-        console.log('res----------------------', res.data.docs);
+        console.log('res-----------------------', res);
         this.setState({
           loading: false,
           searchData: res.data.docs
@@ -54,8 +53,8 @@ class App extends Component {
       const data = this.state.searchData;
       const sortedByYear = data.sort(
         function(a, b) {
-          var yearA = a.first_publish_year;
-          var yearB = b.first_publish_year;
+          var yearA = a.first_publish_year !== undefined ? a.first_publish_year : 0;
+          var yearB = b.first_publish_year !== undefined ? b.first_publish_year : 0;
           return (yearA < yearB) ? 1 : (yearA > yearB) ? -1 : 0;
       });
       this.setState({sortByTitle: false, sortByYear: true})

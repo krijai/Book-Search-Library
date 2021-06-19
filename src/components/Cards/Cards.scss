@@ -4,8 +4,12 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
 
+    @media screen and (max-width: 768px) {
+        display: block;
+    }
+
     .card-details {
-        border: 1px solid black;
+        border: 1px solid transparent;
         padding: 10px;
         flex: 1 0 calc(20% - 20px);
         max-width: 20%;
@@ -14,6 +18,14 @@
         flex-wrap: unset;
         justify-content: space-evenly;
         margin: 10px 0;
+        box-shadow: 0 0 10px 0 rgba(0,0,0,0.6);
+        border-radius: 5px;
+
+        @media screen and (max-width: 768px) {
+            flex-basis: 100%;
+            max-width: 100%;
+            margin: 10px;
+        }
     }
 
     .card-image{

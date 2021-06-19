@@ -19,24 +19,25 @@ const Cards = (props) => {
             props.data.map((item, index) => {
                 let res;
                 let isbn = item.hasOwnProperty('isbn');
-                console.log('ISBN hasOwnPropertyhasOwnProperty---------------', item.hasOwnProperty('isbn'));
                 isbn = (isbn ? item.isbn[0] : '');
                 res = promiseData(isbn);
                 let objValue = res.then((data) => {
-                // console.log('Cards Component item-------', item, props.data[index]);
-                // setFilteredArr(...filteredArr, [{ id: item._version_, title: item.title, year: item.first_publish_year, url: data }])
                     return ({ id: item._version_, title: item.title, year: item.first_publish_year, url: data })
                 })
-
-                console.log('objValue------------', objValue);
-
+                let year = item.hasOwnProperty('first_publish_year') ? item.first_publish_year : 0;
+                let authorName = item.hasOwnProperty('author_name') ? item.author_name[0] : 'N/A';
+                let value;
+                objValue.then((val) => value = 'val.url');
+                console.log('val.url----------------', value);
                 return (<div className="card-details" key={item._version_}>
                         <div className="card-image">
                             {/* <img src={res ? res.config.url : ''} alt="No URL"/> */}
                         </div>
                         <div className="card-text">
                             <p><strong>Title:</strong> {item.title} </p>
-                            <p><strong>Year:</strong> ${item.first_publish_year}</p>
+                            <p><strong>Year:</strong> {year}</p>
+                            <p><strong>Author:</strong> {authorName}</p>
+                            <p><strong>URL:</strong>{value}</p>
                             </div>
                         </div>);
             })

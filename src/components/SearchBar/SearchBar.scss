@@ -8,6 +8,10 @@
     max-height: 400px;
     margin: 50px 20px;
 
+    @media screen and (max-width: 768px){
+        margin-bottom: 20px; 
+    }
+
     &.active {
         transform: translateY(-46%);
         transition: transform 2s ease-in;
@@ -94,6 +98,7 @@
 
         @media screen and (max-width: 768px) {   
             margin-top: 25px;
+            margin-left: 0;
         }
     }
 }
