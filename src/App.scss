@@ -11,6 +11,11 @@ min-height: 100vh;;
     a {
       text-decoration: none;
       color: #7EE2E2;
+      background-color: black;
+      display: inline-block;
+      text-align: center;
+      border: 1px solid transparent;
+      padding: 10px;
     }
 
     a:hover {
@@ -24,7 +29,7 @@ min-height: 100vh;;
   border: 1px solid transparent;
   margin: 50px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
-  background-color: #F8F8F8 ;
+  background-color: rgba(248, 248, 248, 0.9) ;
 
   @media screen and (max-width: 768px) {
     margin: 20px;
